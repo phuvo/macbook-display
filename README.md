@@ -1,4 +1,4 @@
-# display-control
+# macbook-display
 
 A tiny macOS CLI for disabling and re-enabling the MacBook built-in
 display for the current login session.
@@ -26,16 +26,16 @@ swift build -c release
 The release binary will be at:
 
 ```sh
-.build/release/display-control
+.build/release/macbook-display
 ```
 
 ## Usage
 
 ```sh
-display-control
-display-control status
-display-control disable
-display-control enable
+macbook-display
+macbook-display status
+macbook-display disable
+macbook-display enable
 ```
 
 Running without arguments is the same as `status`.

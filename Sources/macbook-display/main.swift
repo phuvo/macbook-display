@@ -118,10 +118,10 @@ private func parseCommand(_ arguments: [String]) throws -> Command {
 private func usage() -> String {
     """
     Usage:
-      display-control
-      display-control status
-      display-control disable
-      display-control enable
+      macbook-display
+      macbook-display status
+      macbook-display disable
+      macbook-display enable
 
     Commands:
       status    Show built-in and external display state.
@@ -157,7 +157,7 @@ private func onlineDisplays() throws -> [Display] {
 
 private func stateFileURL() -> URL {
     FileManager.default.temporaryDirectory
-        .appendingPathComponent("display-control-\(getuid())", isDirectory: true)
+        .appendingPathComponent("macbook-display-\(getuid())", isDirectory: true)
         .appendingPathComponent("builtin-display-id")
 }
 
@@ -255,7 +255,7 @@ private func run() throws {
 do {
     try run()
 } catch let error as CLIError {
-    fputs("display-control: \(error.description)\n", stderr)
+    fputs("macbook-display: \(error.description)\n", stderr)
     if case .usage = error {
         fputs("\n\(usage())\n", stderr)
         exit(ExitCode.usage.rawValue)
@@ -272,6 +272,6 @@ do {
         exit(ExitCode.usage.rawValue)
     }
 } catch {
-    fputs("display-control: \(error)\n", stderr)
+    fputs("macbook-display: \(error)\n", stderr)
     exit(ExitCode.failure.rawValue)
 }

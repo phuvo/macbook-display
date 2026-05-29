@@ -3,16 +3,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "display-control",
+    name: "macbook-display",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "display-control", targets: ["display-control"])
+        .executable(name: "macbook-display", targets: ["macbook-display"])
     ],
     targets: [
         .executableTarget(
-            name: "display-control",
+            name: "macbook-display",
             linkerSettings: [
                 .linkedFramework("CoreGraphics")
             ]
